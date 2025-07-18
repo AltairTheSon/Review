@@ -1,0 +1,453 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-primary text-white font-sans antialiased;
+    min-height: 100vh;
+  }
+  
+  * {
+    @apply border-gray-700;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-accent text-white px-6 py-3 rounded-card font-medium transition-all duration-300 hover:shadow-accent-glow hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-surface text-white px-6 py-3 rounded-card font-medium transition-all duration-300 hover:bg-dark-card border border-gray-600;
+  }
+  
+  .card {
+    @apply bg-dark-surface rounded-card p-6 shadow-neumorphic transition-all duration-300 hover:shadow-card-hover hover:-translate-y-2 border border-gray-700;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-accent-glow hover:border-accent-purple/50;
+  }
+  
+  .input-field {
+    @apply bg-dark-card border border-gray-600 rounded-card px-4 py-3 text-white placeholder-gray-400 focus:border-accent-purple focus:ring-2 focus:ring-accent-purple/20 transition-all duration-300;
+  }
+  
+  .tag {
+    @apply bg-accent-purple/20 text-accent-purple px-3 py-1 rounded-full text-sm font-medium border border-accent-purple/30;
+  }
+  
+  .tag-secondary {
+    @apply bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm font-medium border border-gray-600;
+  }
+  
+  .rating-star {
+    @apply w-5 h-5 text-yellow-400 fill-current;
+  }
+  
+  .rating-star-empty {
+    @apply w-5 h-5 text-gray-600 fill-current;
+  }
+  
+  .navbar-item {
+    @apply text-gray-300 hover:text-white transition-colors duration-300 font-medium;
+  }
+  
+  .navbar-item-active {
+    @apply text-accent-purple;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold font-display bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-6;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-sm bg-white/5 border border-white/10 rounded-card;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-accent bg-clip-text text-transparent;
+  }
+  
+  .mobile-nav-item {
+    @apply flex items-center justify-center p-3 rounded-card transition-all duration-300 hover:bg-dark-card;
+  }
+  
+  .mobile-nav-item-active {
+    @apply bg-gradient-accent text-white;
+  }
+  
+  .comparison-table {
+    @apply overflow-x-auto bg-dark-surface rounded-card border border-gray-700;
+  }
+  
+  .comparison-table th {
+    @apply bg-dark-card text-left p-4 font-semibold text-gray-300 border-b border-gray-700;
+  }
+  
+  .comparison-table td {
+    @apply p-4 border-b border-gray-700 text-gray-200;
+  }
+  
+  .loading-spinner {
+    @apply animate-spin rounded-full h-8 w-8 border-b-2 border-accent-purple;
+  }
+  
+  .review-card {
+    @apply card bg-dark-card border-gray-600 hover:border-accent-purple/30 transition-all duration-300;
+  }
+  
+  .pros-cons-grid {
+    @apply grid md:grid-cols-2 gap-6 mt-6;
+  }
+  
+  .pros-list {
+    @apply space-y-2;
+  }
+  
+  .cons-list {
+    @apply space-y-2;
+  }
+  
+  .pros-item {
+    @apply flex items-center space-x-2 text-green-400;
+  }
+  
+  .cons-item {
+    @apply flex items-center space-x-2 text-red-400;
+  }
+  
+  .filter-chip {
+    @apply bg-dark-card text-gray-300 px-4 py-2 rounded-full text-sm font-medium border border-gray-600 hover:border-accent-purple hover:text-accent-purple transition-all duration-300 cursor-pointer;
+  }
+  
+  .filter-chip-active {
+    @apply bg-gradient-accent text-white border-transparent;
+  }
+  
+  .search-bar {
+    @apply w-full bg-dark-card border border-gray-600 rounded-card px-4 py-3 pl-12 text-white placeholder-gray-400 focus:border-accent-purple focus:ring-2 focus:ring-accent-purple/20 transition-all duration-300;
+  }
+  
+  .company-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+  
+  .company-card {
+    @apply card card-hover cursor-pointer transform transition-all duration-300 hover:scale-105;
+  }
+  
+  .trending-badge {
+    @apply absolute top-4 right-4 bg-gradient-accent text-white px-2 py-1 rounded-full text-xs font-bold;
+  }
+  
+  .industry-badge {
+    @apply bg-primary-800 text-primary-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-dark-surface border-t border-gray-700 p-4 md:hidden;
+  }
+  
+  .bottom-nav-grid {
+    @apply grid grid-cols-5 gap-2;
+  }
+  
+  .action-button {
+    @apply fixed bottom-20 right-4 bg-gradient-accent text-white p-4 rounded-full shadow-lg hover:shadow-accent-glow transition-all duration-300 md:hidden;
+  }
+  
+  .hero-section {
+    @apply py-20 px-4 text-center relative overflow-hidden;
+  }
+  
+  .hero-title {
+    @apply text-5xl md:text-7xl font-bold font-display mb-6 bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent;
+  }
+  
+  .hero-subtitle {
+    @apply text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto;
+  }
+  
+  .floating-shapes {
+    @apply absolute inset-0 pointer-events-none;
+  }
+  
+  .floating-shape {
+    @apply absolute animate-float opacity-20;
+  }
+  
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4;
+  }
+  
+  .modal-content {
+    @apply bg-dark-surface rounded-card p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-700;
+  }
+  
+  .breadcrumb {
+    @apply flex items-center space-x-2 text-sm text-gray-400 mb-6;
+  }
+  
+  .breadcrumb-item {
+    @apply hover:text-accent-purple transition-colors duration-300;
+  }
+  
+  .breadcrumb-separator {
+    @apply text-gray-600;
+  }
+  
+  .stats-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4 mb-8;
+  }
+  
+  .stat-card {
+    @apply bg-dark-card rounded-card p-4 text-center border border-gray-700;
+  }
+  
+  .stat-value {
+    @apply text-2xl font-bold text-accent-purple;
+  }
+  
+  .stat-label {
+    @apply text-sm text-gray-400 mt-1;
+  }
+  
+  .tab-navigation {
+    @apply flex space-x-1 bg-dark-card rounded-card p-1 mb-6;
+  }
+  
+  .tab-button {
+    @apply flex-1 py-2 px-4 rounded-card text-center transition-all duration-300 font-medium;
+  }
+  
+  .tab-button-active {
+    @apply bg-gradient-accent text-white;
+  }
+  
+  .tab-button-inactive {
+    @apply text-gray-400 hover:text-white hover:bg-dark-surface;
+  }
+  
+  .review-form {
+    @apply space-y-6;
+  }
+  
+  .criteria-rating {
+    @apply flex items-center justify-between p-4 bg-dark-card rounded-card border border-gray-700;
+  }
+  
+  .criteria-stars {
+    @apply flex space-x-1;
+  }
+  
+  .criteria-star {
+    @apply w-6 h-6 text-gray-600 hover:text-yellow-400 cursor-pointer transition-colors duration-300;
+  }
+  
+  .criteria-star-active {
+    @apply text-yellow-400;
+  }
+  
+  .competitor-comparison {
+    @apply bg-dark-card rounded-card p-6 border border-gray-700;
+  }
+  
+  .competitor-grid {
+    @apply grid md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+  
+  .competitor-card {
+    @apply bg-dark-surface rounded-card p-4 border border-gray-600 hover:border-accent-purple/50 transition-all duration-300;
+  }
+  
+  .tag-cloud {
+    @apply flex flex-wrap gap-2 mb-6;
+  }
+  
+  .pros-tag {
+    @apply bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/30;
+  }
+  
+  .cons-tag {
+    @apply bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm border border-red-500/30;
+  }
+  
+  .improvement-tag {
+    @apply bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm border border-blue-500/30;
+  }
+  
+  .comment-thread {
+    @apply space-y-4 ml-6 border-l-2 border-gray-700 pl-6;
+  }
+  
+  .comment-card {
+    @apply bg-dark-card rounded-card p-4 border border-gray-700;
+  }
+  
+  .comment-meta {
+    @apply flex items-center justify-between mb-2;
+  }
+  
+  .comment-author {
+    @apply font-medium text-gray-300;
+  }
+  
+  .comment-date {
+    @apply text-sm text-gray-500;
+  }
+  
+  .comment-content {
+    @apply text-gray-200 leading-relaxed;
+  }
+  
+  .reply-button {
+    @apply text-sm text-accent-purple hover:text-accent-pink transition-colors duration-300 mt-2;
+  }
+  
+  .verification-badge {
+    @apply inline-flex items-center space-x-1 bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs border border-green-500/30;
+  }
+  
+  .media-gallery {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4;
+  }
+  
+  .media-item {
+    @apply aspect-square bg-dark-card rounded-card overflow-hidden border border-gray-700 hover:border-accent-purple/50 transition-all duration-300 cursor-pointer;
+  }
+  
+  .media-thumbnail {
+    @apply w-full h-full object-cover;
+  }
+  
+  .pagination {
+    @apply flex items-center justify-center space-x-2 mt-8;
+  }
+  
+  .pagination-button {
+    @apply px-4 py-2 rounded-card bg-dark-card text-gray-300 hover:bg-dark-surface hover:text-white transition-all duration-300 border border-gray-700;
+  }
+  
+  .pagination-button-active {
+    @apply bg-gradient-accent text-white border-transparent;
+  }
+  
+  .pagination-button-disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  
+  .sort-dropdown {
+    @apply bg-dark-card border border-gray-600 rounded-card px-4 py-2 text-white focus:border-accent-purple focus:ring-2 focus:ring-accent-purple/20 transition-all duration-300;
+  }
+  
+  .empty-state {
+    @apply text-center py-16 text-gray-400;
+  }
+  
+  .empty-state-icon {
+    @apply w-16 h-16 mx-auto mb-4 text-gray-600;
+  }
+  
+  .empty-state-title {
+    @apply text-xl font-semibold mb-2;
+  }
+  
+  .empty-state-description {
+    @apply text-gray-500 mb-6;
+  }
+  
+  .skeleton {
+    @apply animate-pulse bg-dark-card rounded;
+  }
+  
+  .skeleton-text {
+    @apply h-4 bg-dark-card rounded;
+  }
+  
+  .skeleton-title {
+    @apply h-6 bg-dark-card rounded;
+  }
+  
+  .skeleton-avatar {
+    @apply w-12 h-12 bg-dark-card rounded-full;
+  }
+  
+  .toast {
+    @apply fixed top-4 right-4 bg-dark-surface border border-gray-700 rounded-card p-4 shadow-lg z-50 max-w-sm;
+  }
+  
+  .toast-success {
+    @apply border-green-500/50 bg-green-500/10;
+  }
+  
+  .toast-error {
+    @apply border-red-500/50 bg-red-500/10;
+  }
+  
+  .toast-warning {
+    @apply border-yellow-500/50 bg-yellow-500/10;
+  }
+  
+  .toast-info {
+    @apply border-blue-500/50 bg-blue-500/10;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .backdrop-blur-glass {
+    backdrop-filter: blur(10px);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
